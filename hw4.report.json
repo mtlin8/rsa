@@ -1,0 +1,214 @@
+{
+  "assignment": {
+    "short": "hw4",
+    "title": "Programming Assignment 4"
+  },
+  "timestamp": "2021-10-30 02:32:48",
+  "problems": {
+    "rsa": {
+      "problem": {
+        "short": "rsa",
+        "title": "RSA"
+      },
+      "automated": {
+        "partial": false,
+        "results": {
+          "check_rsa_makefile": {
+            "complete": true,
+            "passing": true,
+            "score": null,
+            "error": null,
+            "messages": [],
+            "task": {
+              "name": "check_rsa_makefile",
+              "description": "Assert a Makefile is present in the target."
+            },
+            "details": {}
+          },
+          "build_rsa": {
+            "complete": true,
+            "passing": true,
+            "score": null,
+            "error": null,
+            "messages": [],
+            "task": {
+              "name": "build_rsa",
+              "description": "Run the Makefile."
+            },
+            "details": {
+              "runtime": {
+                "args": [
+                  "make",
+                  "-C",
+                  "/work/hw-mtlin/tests/../hw4"
+                ],
+                "cwd": null,
+                "stdin": null,
+                "stdout": "make: Entering directory '/work/hw-mtlin/hw4'\ng++ -Wall -g rsa.cpp -o rsa\nmake: Leaving directory '/work/hw-mtlin/hw4'\n",
+                "stderr": "rsa.cpp: In function \u2018int main(int, char**)\u2019:\nrsa.cpp:63:10: warning: unused variable \u2018gcd\u2019 [-Wunused-variable]\n   63 |     long gcd = old_r;\n      |          ^~~\nrsa.cpp: In function \u2018std::string convertToWord(long int, int)\u2019:\nrsa.cpp:192:29: warning: comparison of integer expressions of different signedness: \u2018std::__cxx11::basic_string<char>::size_type\u2019 {aka \u2018long unsigned int\u2019} and \u2018int\u2019 [-Wsign-compare]\n  192 |     while (toReverse.size() < x) {\n      |            ~~~~~~~~~~~~~~~~~^~~\n",
+                "elapsed": 0.9025309000026027,
+                "code": 0,
+                "timeout": 10,
+                "timed_out": false,
+                "raised_exception": false,
+                "exception": null
+              }
+            }
+          },
+          "check_rsa": {
+            "complete": true,
+            "passing": true,
+            "score": null,
+            "error": null,
+            "messages": [],
+            "task": {
+              "name": "check_rsa",
+              "description": "Check whether the binary exists."
+            },
+            "details": {}
+          },
+          "test_rsa_encrypt": {
+            "complete": true,
+            "passing": true,
+            "score": null,
+            "error": null,
+            "messages": [],
+            "task": {
+              "name": "test_rsa_encrypt",
+              "description": "Check the output of encryption."
+            },
+            "details": {
+              "runtime": {
+                "args": [
+                  "/work/hw-mtlin/tests/../hw4/rsa",
+                  "9733",
+                  "9739"
+                ],
+                "cwd": null,
+                "stdin": "ENCRYPT out.txt 94789687 fight on\nEXIT\n",
+                "stdout": "",
+                "stderr": "",
+                "elapsed": 0.005350999999791384,
+                "code": 0,
+                "timeout": 2,
+                "timed_out": false,
+                "raised_exception": false,
+                "exception": null
+              }
+            },
+            "expected": null,
+            "actual": null
+          },
+          "test_rsa_decrypt": {
+            "complete": true,
+            "passing": true,
+            "score": null,
+            "error": null,
+            "messages": [],
+            "task": {
+              "name": "test_rsa_decrypt",
+              "description": "Check the output of decryption."
+            },
+            "details": {
+              "runtime": {
+                "args": [
+                  "/work/hw-mtlin/tests/../hw4/rsa",
+                  "9733",
+                  "9739"
+                ],
+                "cwd": null,
+                "stdin": "DECRYPT out.txt plain.txt\nEXIT\n",
+                "stdout": "6090708\n8\n7\n9\n6\n20001514\n14\n15\n0\n20\n",
+                "stderr": "",
+                "elapsed": 0.010629899999912595,
+                "code": 0,
+                "timeout": 2,
+                "timed_out": false,
+                "raised_exception": false,
+                "exception": null
+              }
+            },
+            "expected": null,
+            "actual": null
+          },
+          "test_rsa_encrypt_decrypt": {
+            "complete": true,
+            "passing": true,
+            "score": null,
+            "error": null,
+            "messages": [],
+            "task": {
+              "name": "test_rsa_encrypt_decrypt",
+              "description": "See if encrypting then decrypting returns the same text."
+            },
+            "details": {
+              "runtime": {
+                "args": [
+                  "/work/hw-mtlin/tests/../hw4/rsa",
+                  "9733",
+                  "9739"
+                ],
+                "cwd": null,
+                "stdin": "ENCRYPT out.txt 94789687 tommy trojan\nDECRYPT out.txt plain.txt\nEXIT\n",
+                "stdout": "20151313\n13\n13\n15\n20\n25002018\n18\n20\n0\n25\n15100114\n14\n1\n10\n15\n",
+                "stderr": "",
+                "elapsed": 0.013792699999612523,
+                "code": 0,
+                "timeout": 2,
+                "timed_out": false,
+                "raised_exception": false,
+                "exception": null
+              }
+            },
+            "expected": null,
+            "actual": null
+          },
+          "test_rsa_encrypt_decrypt_alternate": {
+            "complete": true,
+            "passing": true,
+            "score": null,
+            "error": null,
+            "messages": [],
+            "task": {
+              "name": "test_rsa_encrypt_decrypt_alternate",
+              "description": "See if encrypting then decrypting returns the same text."
+            },
+            "details": {
+              "runtime": {
+                "args": [
+                  "/work/hw-mtlin/tests/../hw4/rsa",
+                  "9733",
+                  "9949"
+                ],
+                "cwd": null,
+                "stdin": "ENCRYPT out.txt 96833617 tommy trojan\nDECRYPT out.txt plain.txt\nEXIT\n",
+                "stdout": "20151313\n13\n13\n15\n20\n25002018\n18\n20\n0\n25\n15100114\n14\n1\n10\n15\n",
+                "stderr": "",
+                "elapsed": 0.011865399999805959,
+                "code": 0,
+                "timeout": 2,
+                "timed_out": false,
+                "raised_exception": false,
+                "exception": null
+              }
+            },
+            "expected": null,
+            "actual": null
+          },
+          "clean_learning": {
+            "complete": true,
+            "passing": true,
+            "score": null,
+            "error": null,
+            "messages": [],
+            "task": {
+              "name": "clean_learning",
+              "description": "Delete the binary."
+            },
+            "details": {}
+          }
+        }
+      }
+    }
+  }
+}
